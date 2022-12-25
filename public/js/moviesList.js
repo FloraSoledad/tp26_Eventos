@@ -1,40 +1,19 @@
 window.onload = function(){
-    let container = document.querySelector('.container');
-    let subtitulo = document.querySelector('.subtitulo');
-    let destacado = document.querySelectorAll('p');
-    let fondo = document.querySelector('body');
-    let body = document.querySelector('a');
-
-    let nombre = 'Flor'
-    console.log(nombre);
-    if(nombre != ''){
-        subtitulo.innerHTML += nombre; 
-    }else{
-        subtitulo.innerHTML += 'INVITADO';
-    }
-
-   subtitulo.style.textTranform = 'uppercase';
-
+    let body = document.querySelector('body');
+    let moviesListTitulo = document.querySelector('.moviesListTitulo');
+    let logo = document.querySelector('.logoDH')
     
-    if(true){
-       fondo.classList.add('fondo');
-       enlace.style.color = '#E51B3E';
-    }
+    let modo  = confirm('Desea modo oscuro');
+    if(modo){
+        body.style.backgroundColor = '#7f7f7f'
+        body.classList.add('fondoMoviesList');
+    } 
 
-    console.log(destacado);
-    for(let i = 0 ; i < destacado.length; i++){
-        if(i % 2 == 0){
-            destacado[i].classList.add('destacadoPar');
-        }else{
-            destacado[i].classList.add('destacadoImpar');
-        }
-    }
-
-    container.style.display = 'block';
-}
-/*     console.log(body);
+  console.log(body);
     moviesListTitulo.innerHTML = 'LISTADO DE PELÍCULAS';
     moviesListTitulo.style.color ='white';
     moviesListTitulo.style.backgroundColor = 'teal';
-    moviesListTitulo.style.padding = '20px'; */
+    moviesListTitulo.style.padding = '20px';
 
+
+}

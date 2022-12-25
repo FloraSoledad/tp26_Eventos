@@ -6,10 +6,10 @@ window.onload = function(){
     let fondo = document.querySelector('body');
     let enlace = document.querySelector('a');
     
+    let menu = document.getElementById('menu');
+    let logoDH = document.querySelector('.logoDH');
 
-    let logo =document.querySelector('.logoDH');
-    let menu =document.querySelector('#menu')
-    let nombre = prompt('Ingrese su nombre');
+    let nombre = 'Flora'
     console.log(nombre);
     if(nombre !=''){
         subtitulo.innerHTML += nombre;
@@ -18,10 +18,9 @@ window.onload = function(){
     }
         
     subtitulo.style.textTransform = 'uppercase';
-    let confirmar = confirm('Desea colocar un fondo de pantalla ')
-    if(confirmar){
-        fondo.classList.add('fondo');
-        enlace.style.color = '#E51B3E';
+    /* let confirmar = confirm('Desea colocar un fondo de pantalla ') */
+    if(true){
+
     }
     console.log(destacado);
     for(let i = 0 ; i < destacado.length; i++){
@@ -33,4 +32,34 @@ window.onload = function(){
     }
     
     container.style.display = 'block';
+
+/*     logoDH.onclick = () => {
+        menu.classList.toggle('mostrar')
+    } */
+
+    logoDH.addEventListener('click',() => {
+        menu.classList.toggle('mostrar')
+    });
+
+    logoDH.addEventListener('mouseover', () => {
+        fondo.classList.add('fondo');
+        enlace.style.color = '#E51B3E';
+    })
+    
+/*     document.getElementById('link-list').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        let respuesta = confirm('Estas seguro?')
+
+        if(respuesta){
+            window.location.href = e.target.href
+        }
+    }) */
+
+    menu.addEventListener('mouseout', (e) => {
+
+        if(!/li|ul|a/.test(e.target.localName)){
+            menu.classList.remove('mostrar')
+        }
+    })
 }
